@@ -10,7 +10,7 @@ const refs = {
 }
 
 class CountdownTimer {
-    constructor({targetDate, onTick }) {
+    constructor({ selector, targetDate, onTick }) {
         this.intervalId = null;
         this.targetDate = targetDate;
         this.onTick = onTick;
@@ -32,7 +32,6 @@ class CountdownTimer {
         const hours = this.pad(Math.floor((time % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)));
         const mins = this.pad(Math.floor((time % (1000 * 60 * 60)) / (1000 * 60)));
         const secs = this.pad(Math.floor((time % (1000 * 60)) / 1000));
-
         return { days, hours, mins, secs };
     }
 
